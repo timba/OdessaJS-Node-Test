@@ -5,10 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "echoer", "echoer.csproj", "
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppHarbor|Any CPU = AppHarbor|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D33E1813-48FA-4B7B-B1BB-FD1A38090E26}.AppHarbor|Any CPU.ActiveCfg = AppHarbor|Any CPU
+		{D33E1813-48FA-4B7B-B1BB-FD1A38090E26}.AppHarbor|Any CPU.Build.0 = AppHarbor|Any CPU
 		{D33E1813-48FA-4B7B-B1BB-FD1A38090E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D33E1813-48FA-4B7B-B1BB-FD1A38090E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33E1813-48FA-4B7B-B1BB-FD1A38090E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
