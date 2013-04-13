@@ -11,6 +11,7 @@ var app = http.createServer(function (request, response) {
 var io = require('socket.io').listen(app);
 
 io.sockets.on('connection', function (socket) {
+    var addr = socket.manager.handshaken[socket.id].address;
     console.log('OH MY~: Connected!');
     socket.on('mess', function (data) {
         console.log('OH MY~: Message! ' + data);
