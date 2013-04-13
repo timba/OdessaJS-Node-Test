@@ -158,6 +158,10 @@
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\swfobject.js" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\WebSocketMain.swf" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\web_socket.js" />
+    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\uglifyjs" />
+    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\uglifyjs.cmd" />
+    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\wscat" />
+    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\wscat.cmd" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\index.js" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules\zeparser\benchmark.html" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules\zeparser\index.js" />
@@ -490,10 +494,6 @@
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\README.md" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\WebSocketMainInsecure.zip" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\Makefile" />
-    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\uglifyjs" />
-    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\uglifyjs.cmd" />
-    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\wscat" />
-    <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin\wscat.cmd" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\.npmignore" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules\zeparser\.npmignore" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules\zeparser\LICENSE" />

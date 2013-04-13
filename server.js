@@ -10,19 +10,29 @@ var app = http.createServer(function (request, response) {
 
 var io = require('socket.io').listen(app);
 
-io.set('transports', [
-     'websocket'
-   , 'flashsocket'
-   , 'htmlfile'
-   , 'xhr-polling'
-   , 'jsonp-polling'
-]);
+//io.set('transports', [
+//     'websocket'
+//   , 'flashsocket'
+//   , 'htmlfile'
+//   , 'xhr-polling'
+//   , 'jsonp-polling'
+//]);
 
-var chat = io.of('/chat').on('connection', function (socket) {
+//var chat = io.of('/chat').on('connection', function (socket) {
+//    console.log('OH MY~: Connected!');
+//    socket.on('mess', function (data) {
+//        console.log('OH MY~: Message!');
+//        chat.emit('broad', data);
+//    });
+//});
+
+//var chat =
+
+io.sockets.on('connection', function (socket) {
     console.log('OH MY~: Connected!');
     socket.on('mess', function (data) {
-        console.log('OH MY~: Message!');
-        chat.emit('broad', data);
+        console.log('OH MY~: Message! '+ data);
+        io.sockets.emit('broad', data);
     });
 });
 
