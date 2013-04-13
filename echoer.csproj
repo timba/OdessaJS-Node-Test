@@ -341,7 +341,9 @@
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\test\util.test.js" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\test\worker.js" />
     <Content Include="server.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

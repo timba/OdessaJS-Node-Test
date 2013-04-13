@@ -3,37 +3,82 @@
 <head>
     <title>Node JS</title>
 </head>
-<body>
+<body style="font-family:Helvetica">
     <script src="/socket.io/socket.io.js"></script>
-    <h1>Node JS Sample</h1>
-    <i>Works fine</i>
-    <button onclick="sendMessage()">Bzz</button>
-    <input type="text" id="msg" />
+
+    <h1 style="color:red;text-shadow:1px 1px #808080;">OdessaJS Rocks!</h1>
+    <h2>Node JS Sample</h2>
+
+    <div>
+        <div style="float:left">
+            <div style="float:none;height:20px;">
+            <span id="conn"><i>connecting...</i></span>
+            </div>
+            <button onclick="sendMessage()">Bzz</button>
+            <input type="text" id="msg" onkeypress="keyPress(event)" />
+        </div>
+        <div style="float:left;margin-left:50px;" >
+            <textarea id="log" readonly="readonly" rows="20" cols="60">
+
+            </textarea>
+        </div>
+    </div>
+
+
     <script type="text/javascript">
 
         var socket = io.connect('/');
+        var tb, conn, log;
+        var connecting = true;
 
-        socket.on('connect', function (   ) {
+        window.onload = function (evt) {
+            tb = document.getElementById('msg');
+            tb.focus();
+            conn = document.getElementById('conn');
+            log = document.getElementById('log');
+        }
+
+        socket.on('broadcast', function (data) {
+            log.textContent = data + '\n' + log.textContent;
+        });
+
+        socket.on('success', function (data) {
+            tb.value = '';
+            tb.focus();
+            log.textContent = data + '\n' + log.textContent;
+        });
+
+        socket.on('connect', function () {
             console.log('connected');
+            conn.style.display = 'none';
+            connecting = false;
         });
 
         socket.on('disconnect', function () {
             console.log('disconnected');
+            connecting = true;
         });
 
         socket.on('error', function (data) {
             console.log(data || 'error');
         });
 
-        socket.on('broad', function (data) {
-            console.log(data);
-            socket.emit('dummy', 'zero');
-        });
-
         var sendMessage = function () {
-            var tb = document.getElementById('msg');
-            socket.emit('mess', tb.value);
+            if (connecting)
+                return;
+            if (tb.value.length == 0)
+                return;
+            socket.emit('mess', tb.value, function () {
+                tb.va = '';
+            });
         }
+
+        var keyPress = function (event) {
+            if (event.keyCode == 13) {
+                sendMessage();
+            }
+        }
+
     </script>
 </body>
 </html>
