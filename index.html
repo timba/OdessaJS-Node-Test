@@ -4,34 +4,35 @@
     <title>Node JS</title>
 </head>
 <body>
-    <script src="socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <h1>Node JS Sample</h1>
     <i>Works fine</i>
     <button onclick="sendMessage()">Bzz</button>
     <input type="text" id="msg" />
     <script type="text/javascript">
 
-        var chat = io.connect('/');
+        var socket = io.connect('/');
 
-        chat.on('connect', function (   ) {
+        socket.on('connect', function (   ) {
             console.log('connected');
         });
 
-        chat.on('disconnect', function () {
+        socket.on('disconnect', function () {
             console.log('disconnected');
         });
 
-        chat.on('error', function (data) {
+        socket.on('error', function (data) {
             console.log(data || 'error');
         });
 
-        chat.on('broad', function (data) {
+        socket.on('broad', function (data) {
             console.log(data);
+            socket.emit('dummy', 'zero');
         });
 
         var sendMessage = function () {
             var tb = document.getElementById('msg');
-            chat.emit('mess', tb.value);
+            socket.emit('mess', tb.value);
         }
     </script>
 </body>

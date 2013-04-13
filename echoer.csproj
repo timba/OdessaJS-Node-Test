@@ -340,10 +340,6 @@
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\test\socket.test.js" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\test\util.test.js" />
     <Content Include="node_modules\socket.io\node_modules\socket.io-client\test\worker.js" />
-    <Content Include="packages.config" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="server.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -547,7 +543,6 @@
     <Content Include="node_modules\socket.io\Readme.md" />
     <Content Include="node_modules\socket.io\TODO" />
     <None Include="Properties\PublishProfiles\testnode.pubxml" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
