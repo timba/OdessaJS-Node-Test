@@ -4,7 +4,7 @@
     <title>Node JS</title>
 </head>
 <body>
-    <script src="http://localhost:62092/socket.io/socket.io.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <h1>Node JS Sample</h1>
     <i>Works fine</i>
     <button onclick="sendMessage()">Bzz</button>
@@ -14,7 +14,7 @@
         var sendMessage;
 
         window.onload = function (e) {
-            var chat = io.connect('http://localhost:62092/chat');
+            var chat = io.connect('/chat');
 
             chat.on('connect', function (   ) {
                 console.log('connected');
