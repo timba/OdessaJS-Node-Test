@@ -4,7 +4,39 @@
     <title>Node JS</title>
 </head>
 <body>
+    <script src="http://localhost:62092/socket.io/socket.io.js"></script>
     <h1>Node JS Sample</h1>
     <i>Works fine</i>
+    <button onclick="sendMessage()">Bzz</button>
+    <input type="text" id="msg" />
+    <script type="text/javascript">
+
+        var sendMessage;
+
+        window.onload = function (e) {
+            var chat = io.connect('http://localhost:62092/chat');
+
+            chat.on('connect', function (   ) {
+                console.log('connected');
+            });
+
+            chat.on('disconnect', function () {
+                console.log('disconnected');
+            });
+
+            chat.on('error', function (data) {
+                console.log(data || 'error');
+            });
+
+            chat.on('broad', function (data) {
+                console.log(data);
+            });
+
+            sendMessage = function () {
+                var tb = document.getElementById('msg');
+                chat.emit('mess', { msg: tb.value });
+            }
+        }
+    </script>
 </body>
 </html>
